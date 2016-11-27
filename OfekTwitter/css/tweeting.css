@@ -1,0 +1,74 @@
+body {
+    margin: 0 0 0 0;
+    font-family: Arial;
+}
+
+/* HEADER */
+
+header {
+    height: 35px;
+    background-color: #0a64eb;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+#logo_pic, #logo_text, nav {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#logo_pic {
+    margin: 5px 5px 5px 5px;
+    height: 70%;
+}
+
+nav {
+    float: right;
+    margin: 0.8%;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 2px black;
+    margin: 8px 8px 8px 8px;
+    font-size: 75%;
+}
+
+/* SECTION */
+
+section {
+    width: 75%;
+    margin: 15px auto 0 auto;
+}
+
+section div span {
+    font-size: 75%;
+}
+
+input[type="textarea"] {
+    width: 70%;
+    height: 60px;
+}
+
+button {
+    font-size: 75%;
+}
+
+#users {
+    margin-top: 2%;
+}
+
+.user {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.userpic, .userinfo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.username {
+    font-weight: bold;
+}
