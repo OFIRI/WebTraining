@@ -1,6 +1,8 @@
 body {
     margin: 0 0 0 0;
-    font-family: Arial;
+    font-family: Arial, serif;
+    font-size: 1.2vw;
+    min-font-size: 5px;
 }
 
 /* HEADER */
@@ -10,6 +12,10 @@ header {
     background-color: #0a64eb;
     color: white;
     text-shadow: 2px 2px black;
+}
+
+.header_icon:hover {
+    background-color: rgba(96, 170, 239, 0.8);
 }
 
 #logo_pic, #logo_text, nav {
@@ -22,9 +28,15 @@ header {
     height: 70%;
 }
 
+#logo_text {
+    text-decoration: none;
+    color: white;
+    font-size: 105%;
+}
+
 nav {
     float: right;
-    margin: 0.8%;
+    margin-right: 13px;
 }
 
 nav a {
@@ -33,13 +45,14 @@ nav a {
     text-shadow: 2px 2px black;
     margin: 8px 8px 8px 8px;
     font-size: 75%;
+    line-height: 300%;
 }
 
 /* SECTION */
 
 section {
     width: 75%;
-    margin: 15px auto 0 auto;
+    margin: 13px auto 0 auto;
 }
 
 section div span {
@@ -47,10 +60,52 @@ section div span {
 }
 
 input {
-    width: 150px;
-    height: 20px;
+    width: 140px;
 }
 
-button {
-    height: 25px;
+input, button {
+    font-size: 75%;
+}
+
+#users {
+    margin-top: 4px;
+}
+
+#all_users, #followees {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#followees {
+    width: 19%;
+    border: 5px solid #e6e6e6;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#all_users {
+    width: 79%;
+}
+
+.user {
+    display: inline-block;
+    vertical-align: middle;
+    border: 3px solid #e6e6e6;
+    border-radius: 5px;
+    height: 120px;
+    width: 114px;
+    text-align: center;
+    margin: 0 2px 7px 2px;
+}
+
+.user:hover {
+    border-color: #cecece;
+}
+
+.user img {
+    margin-top: 10px;
+}
+
+.user button {
+    margin-bottom: 8px;
 }

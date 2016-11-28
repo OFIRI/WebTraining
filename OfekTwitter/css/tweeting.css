@@ -1,6 +1,7 @@
 body {
     margin: 0 0 0 0;
-    font-family: Arial;
+    font-family: Arial, serif;
+    font-size: 1.2vw;
 }
 
 /* HEADER */
@@ -10,6 +11,10 @@ header {
     background-color: #0a64eb;
     color: white;
     text-shadow: 2px 2px black;
+}
+
+.header_icon:hover {
+    background-color: rgba(96, 170, 239, 0.8);
 }
 
 #logo_pic, #logo_text, nav {
@@ -22,9 +27,15 @@ header {
     height: 70%;
 }
 
+#logo_text {
+    text-decoration: none;
+    color: white;
+    font-size: 105%;
+}
+
 nav {
     float: right;
-    margin: 0.8%;
+    margin-right: 13px;
 }
 
 nav a {
@@ -33,13 +44,14 @@ nav a {
     text-shadow: 2px 2px black;
     margin: 8px 8px 8px 8px;
     font-size: 75%;
+    line-height: 300%;
 }
 
 /* SECTION */
 
 section {
     width: 75%;
-    margin: 15px auto 0 auto;
+    margin: 13px auto 0 auto;
 }
 
 section div span {
@@ -51,8 +63,13 @@ input[type="textarea"] {
     height: 60px;
 }
 
+input[placeholder] {
+    font-size: 78%;
+    letter-spacing: -0.03em;
+}
+
 button {
-    font-size: 75%;
+    font-size: 76%;
 }
 
 #users {
