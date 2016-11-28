@@ -1,0 +1,64 @@
+body {
+    background-color: black;
+}
+
+.balls {
+    width: 150px;
+    height: 100px;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+
+.ball {
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+    @keyframes move_ball {
+        0% {
+            transform: translateY(-100px);
+        }
+        50% {
+            transform: translateY(100px);
+        }
+        100% {
+            transform: translateY(-100px);
+        }
+    }
+
+#a {
+    color: red;
+    animation: move_ball 2.05s infinite ease-in-out;
+}
+
+#b {
+    color: darkseagreen;
+    animation: move_ball 2.15s infinite ease-in-out;
+}
+
+#c {
+    color: cadetblue;
+    animation: move_ball 2.25s infinite ease-in-out;
+}
+
+#d {
+    color: yellow;
+    animation: move_ball 2.00s infinite ease-in-out;
+}
+
+#e {
+    color: darkslategrey;
+    animation: move_ball 2.10s infinite ease-in-out;
+}
+
+#f {
+    color: orange;
+    animation: move_ball 2.20s infinite ease-in-out;
+}
+
+#g {
+    color: steelblue;
+    animation: move_ball 2.00s infinite ease-in-out;
+}
