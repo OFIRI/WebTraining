@@ -1,23 +1,38 @@
 body {
     margin: 0 0 0 0;
     font-family: Arial, serif;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
+}
+
+.container {
+    width: 90%;
 }
 
 /* HEADER */
 
 header {
-    height: 35px;
     background-color: #0a64eb;
     color: white;
-    text-shadow: 2px 2px black;
+    overflow: hidden;
+}
+
+.navbar {
+    border: 1px solid transparent;
+    margin: 0;
+    border-bottom: 1px solid black;
+    border-radius: 0px;
+}
+
+.navbar-inverse {
+    background: #0a64eb;
 }
 
 .header_icon:hover {
-    background-color: rgba(96, 170, 239, 0.8);
+    opacity: 0.8;
+    text-decoration: none;
 }
 
-#logo_pic, #logo_text, nav {
+#logo_pic, #logo_text, #site-options-nav {
     display: inline-block;
     vertical-align: middle;
 }
@@ -32,16 +47,9 @@ header {
     font-size: 105%;
 }
 
-nav {
-    float: right;
-    margin-right: 13px;
-}
-
-nav a {
-    text-decoration: none;
+#site-options-nav a {
     color: white;
-    text-shadow: 2px 2px black;
-    margin: 8px 8px 8px 8px;
+    padding: 5px 10px 5px 10px;
     font-size: 75%;
     line-height: 300%;
 }
@@ -49,7 +57,6 @@ nav a {
 /* SECTION */
 
 section {
-    width: 75%;
     margin: 13px auto 0 auto;
 }
 
@@ -57,18 +64,13 @@ section div span {
     font-size: 75%;
 }
 
-input[type="textarea"] {
-    width: 70%;
-    height: 60px;
-}
-
-input[placeholder] {
-    font-size: 78%;
-    letter-spacing: -0.03em;
+textarea[placeholder] {
+    letter-spacing: -0.04em;
 }
 
 button {
     font-size: 76%;
+    float: right;
 }
 
 #users {

@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>TWEETING</title>
-    <link href="../css/normalize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap-theme.css">
     <link href="../css/tweeting.css" rel="stylesheet" />
 </head>
 <body>
 <header>
-    <img class="header_icon" id="logo_pic" src="../images/ofek.png" alt="logo" />
-    <a class="header_icon" id="logo_text" href="tweeting.html">OfekTwitter</a>
-    <nav>
-        <a class="header_icon" href="users.html">Users</a>
-        <a class="header_icon" href="#">Sign up</a>
-        <a class="header_icon" href="#">Sign in</a>
-    </nav>
+    <div id="general-nav" class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <img class="header_icon" id="logo_pic" src="../images/ofek.png" alt="logo" />
+                <a class="header_icon" id="logo_text" href="tweeting.html">OfekTwitter</a>
+            </div>
+            <nav id="site-options-nav" class="navbar-right">
+                <a class="header_icon" href="users.html">Users</a>
+                <a class="header_icon" href="#">Sign in</a>
+                <a class="header_icon" href="#">Sign up</a>
+            </nav>
+        </div>
+    </div>
 </header>
-    <section>
+    <section class="container">
         <div>
-            <input type="textarea" placeholder="tweet text..." />
-            <button>publish</button>
+            <textarea class="form-control" rows="3" placeholder="tweet text..."></textarea>
+            <button type="button" class="btn btn-primary">publish</button>
         </div>
         <div id="users">
             <div class="user">

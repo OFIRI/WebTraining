@@ -3,89 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>USERS</title>
-    <link href="../css/normalize.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap-theme.css">
     <link href="../css/users.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <img class="header_icon" id="logo_pic" src="../images/ofek.png" alt="logo" />
-        <a class="header_icon" id="logo_text" href="tweeting.html">OfekTwitter</a>
-        <nav>
-            <a class="header_icon" href="users.html">Users</a>
-            <a class="header_icon" href="#">Sign up</a>
-            <a class="header_icon" href="#">Sign in</a>
-        </nav>
+        <div id="general-nav" class="navbar navbar-default navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <img class="header_icon" id="logo_pic" src="../images/ofek.png" alt="logo" />
+                    <a class="header_icon" id="logo_text" href="tweeting.html">OfekTwitter</a>
+                </div>
+                <nav id="site-options-nav" class="navbar-right">
+                    <a class="header_icon" href="users.html">Users</a>
+                    <a class="header_icon" href="#">Sign in</a>
+                    <a class="header_icon" href="#">Sign up</a>
+                </nav>
+            </div>
+        </div>
     </header>
-    <section>
+    <section class="container">
         <div>
-            <span>Filter by </span>
-            <input type="text" placeholder="user name" />
-            <button>ok</button>
-            <div id="users">
-                <div id="all_users">
+            <form role="form">
+                <div class="col-md-3">
+                    <input type="text" class="form-control" placeholder="filter by user name" />
+                </div>
+                <button type="button" class="btn btn-primary">ok</button>
+            </form>
+            <div id="users" class="container" class="row">
+                <div id="all_users" class="col-md-10">
                     <div class="user">
                         <img src="../images/useravatar.png" alt="useravatar"/>
                         <br/>
-                        <button>follow</button>
+                        <button type="button" class="btn btn-primary">follow</button>
                         <br/>
                         <span>Marty McFly</span>
                     </div>
                     <div class="user">
                         <img src="../images/useravatar.png" alt="useravatar"/>
                         <br/>
-                        <button>follow</button>
+                        <button type="button" class="btn btn-primary">follow</button>
                         <br/>
                         <span>James Bond</span>
                     </div>
                     <div class="user">
                         <img src="../images/useravatar.png" alt="useravatar"/>
                         <br/>
-                        <button>unfollow</button>
+                        <button type="button" class="btn btn-primary">unfollow</button>
                         <br/>
                         <span>Janis Joplin</span>
                     </div>
                     <div class="user">
                         <img src="../images/useravatar.png" alt="useravatar"/>
                         <br/>
-                        <button>follow</button>
+                        <button type="button" class="btn btn-primary">follow</button>
                         <br/>
                         <span>Mark Twain</span>
                     </div>
                     <div class="user">
                         <img src="../images/useravatar.png" alt="useravatar"/>
                         <br/>
-                        <button>unfollow</button>
+                        <button type="button" class="btn btn-primary">unfollow</button>
                         <br/>
                         <span>Albert Einstein</span>
                     </div>
                     <div class="user">
                         <img src="../images/useravatar.png" alt="useravatar"/>
                         <br/>
-                        <button>follow</button>
+                        <button type="button" class="btn btn-primary">follow</button>
                         <br/>
                         <span>Frodo</span>
                     </div>
                     <div class="user">
                         <img src="../images/useravatar.png" alt="useravatar"/>
                         <br/>
-                        <button>follow</button>
+                        <button type="button" class="btn btn-primary">follow</button>
                         <br/>
                         <span>Bill Gates</span>
                     </div>
                 </div>
-                <div id="followees">
+                <div id="followees" col-md-2>
                     <h4>Followees</h4>
                     <div class="user">
                         <img src="../images/useravatar.png" alt="useravatar"/>
                         <br/>
-                        <button>unfollow</button>
+                        <button type="button" class="btn btn-primary">unfollow</button>
                         <br/>
                         <span>Albert Einstein</span>
                     </div>
                     <div class="user">
                         <img src="../images/useravatar.png" alt="useravatar"/>
                         <br/>
-                        <button>unfollow</button>
+                        <button type="button" class="btn btn-primary">unfollow</button>
                         <br/>
                         <span>Janis Joplin</span>
                     </div>
