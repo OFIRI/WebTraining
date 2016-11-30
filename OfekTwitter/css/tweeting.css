@@ -81,11 +81,24 @@ button {
     margin-bottom: 10px;
 }
 
-.userpic, .userinfo {
+.user-pic, .user-info {
     display: inline-block;
     vertical-align: middle;
 }
 
-.username {
+.user-pic {
+    margin: 0.6%;
+}
+
+.user-info p {
+    font-size: 80%;
+    margin-bottom: 0;
+}
+
+.user-name {
     font-weight: bold;
+}
+
+.received-tweets {
+    color: green;
 }

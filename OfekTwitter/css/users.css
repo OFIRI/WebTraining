@@ -56,12 +56,8 @@ header {
 
 /* SECTION */
 
-section {
-    margin-top: 13px;
-}
-
-section div span {
-    font-size: 75%;
+input {
+    margin-bottom: 15px;
 }
 
 input, button {
@@ -85,7 +81,7 @@ input, button {
 
 .user {
     width: 100%;
-    border: 1px solid #e6e6e6;
+    border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
     height: 170px;
@@ -98,9 +94,14 @@ input, button {
 }
 
 .user img {
-    margin: 8% 0 8% 0;
+    margin: auto;
 }
 
 .user button {
+    margin-top: 15%;
     margin-bottom: 15%;
+}
+
+.user p {
+    font-size: 80%;
 }

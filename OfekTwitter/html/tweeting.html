@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap-theme.css">
     <link href="../css/tweeting.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/tweeting.js"></script>
 </head>
 <body>
 <header>
@@ -25,50 +26,10 @@
 </header>
     <section class="container">
         <div>
-            <textarea class="form-control" rows="3" placeholder="tweet text..."></textarea>
-            <button type="button" class="btn btn-primary">publish</button>
+            <textarea id="input" class="form-control" rows="3" placeholder="tweet text..."></textarea>
+            <button type="button" id="publish-btn" class="btn btn-primary">publish</button>
         </div>
         <div id="users">
-            <div class="user">
-                <img class="userpic" src="../images/useravatar.png" />
-                <div class="userinfo">
-                    <span class="username">James Bond says:</span>
-                    <br/>
-                    <span class="userinput">Blabla bla...</span>
-                </div>
-            </div>
-            <div class="user">
-                <img class="userpic" src="../images/useravatar.png" />
-                <div class="userinfo">
-                    <span class="username">James Bond says:</span>
-                    <br/>
-                    <span class="userinput">Bond, James bond</span>
-                </div>
-            </div>
-            <div class="user">
-                <img class="userpic" src="../images/useravatar.png" />
-                <div class="userinfo">
-                    <span class="username">Albert Einstein says:</span>
-                    <br/>
-                    <span class="userinput">E = mc^2</span>
-                </div>
-            </div>
-            <div class="user">
-                <img class="userpic" src="../images/useravatar.png" />
-                <div class="userinfo">
-                    <span class="username">Bill Gates says:</span>
-                    <br/>
-                    <span class="userinput">I think 64 bytes should be enough for everyone</span>
-                </div>
-            </div>
-            <div class="user">
-                <img class="userpic" src="../images/useravatar.png" />
-                <div class="userinfo">
-                    <span class="username">Frodo says:</span>
-                    <br/>
-                    <span class="userinput">My Precious</span>
-                </div>
-            </div>
         </div>
     </section>
     <footer>
