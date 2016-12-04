@@ -1,0 +1,18 @@
+.testGroup {
+    width: 95%;
+    margin: 5% auto 0 auto;
+}
+
+.passed {
+    background-color: darkseagreen;
+    border: 1px solid dimgrey;
+}
+
+.failed {
+    background-color: indianred;
+    border: 1px solid dimgrey;
+}
+
+ul {
+    list-style-type: none;
+}
