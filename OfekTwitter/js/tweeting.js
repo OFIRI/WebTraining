@@ -20,7 +20,7 @@ var loadExistingTweets = function () {
         var info = createDivElement("user-info");
         var name = createParagraphElement("user-name");
 
-        name.classList.add("received-tweets");
+        $(name).addClass("received-tweets");
         name.innerHTML = currTweet.username;
         var input = createParagraphElement("user-input");
         input.innerHTML = currTweet.text;

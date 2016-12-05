@@ -1,15 +1,15 @@
 .testGroup {
     width: 95%;
-    margin: 5% auto 0 auto;
+    margin: 1% auto 0 auto;
 }
 
 .passed {
-    background-color: darkseagreen;
+    background-color: rgba(65, 222, 136, 0.56);
     border: 1px solid dimgrey;
 }
 
 .failed {
-    background-color: indianred;
+    background-color: rgba(234, 48, 33, 0.55);
     border: 1px solid dimgrey;
 }
 

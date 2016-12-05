@@ -51,15 +51,15 @@ var handleQueryList = function (query, rootElement, previousElements) {
     }
 
     newElementArray.forEach(function (element) {
-        var repeatElement = false;
+        var duplicatedElement = false;
 
         previousElements.forEach(function (prevElement) {
             if (element === prevElement) {
-                repeatElement = true;
+                duplicatedElement = true;
             }
         });
 
-        if (repeatElement === false) {
+        if (duplicatedElement === false) {
             elements.push(element);
         }
     });
@@ -165,10 +165,10 @@ ofekQuery.prototype = {
                 filtered.push(element)
             }
         });
-        var new_ofek_query = $();
-        new_ofek_query.elements = filtered;
+        var newOfekQuery = $();
+        newOfekQuery.elements = filtered;
 
-        return new_ofek_query;
+        return newOfekQuery;
     },
 
     css: function (property, value) {
