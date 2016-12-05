@@ -129,7 +129,7 @@ abbr[title] {
 }
 
 /**
- * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ * Prevent the repeatElement application of `bolder` by the next rule in Safari 6.
  */
 
 b,
