@@ -39,12 +39,12 @@ var handleQueryList = function (query, rootElement, previousElements) {
     var elements = [];
     var newElementArray = [];
 
-    if (query.charAt(0) === "#") {
+    if (query.startsWith("#")) {
         var newElementById = document.getElementById(query.slice(1));
         if (newElementById !== null) {
             newElementArray.push(newElementById);
         }
-    } else if (query.charAt(0) === ".") {
+    } else if (query.startsWith(".")) {
         newElementArray = makeArrayFromNodeList(rootElement.getElementsByClassName(query.slice(1)));
     } else {
         newElementArray = makeArrayFromNodeList(rootElement.getElementsByTagName(query));
@@ -59,7 +59,7 @@ var handleQueryList = function (query, rootElement, previousElements) {
             }
         });
 
-        if (duplicatedElement === false) {
+        if (!duplicatedElement) {
             elements.push(element);
         }
     });
@@ -95,9 +95,7 @@ ofekQuery.prototype = {
     },
 
     each: function (func) {
-        this.elements.forEach(function (element, index, arr) {
-            func(element, index, arr)
-        })
+        this.elements.forEach(func);
     },
 
     map: function (func) {
@@ -138,12 +136,12 @@ ofekQuery.prototype = {
             predicates.forEach(function (func) {
                 if (!func(element)) {
                     predicates_flag = false;
-                    return false
+                    return false;
                 }
             });
             if (!predicates_flag) {
                 all_flag = false;
-                return false
+                return false;
             }
         });
 
