@@ -73,7 +73,9 @@ button {
 }
 
 #users {
-    margin-top: 2%;
+    margin-top: 4%;
+    height: 600px;
+    overflow-y: scroll;
 }
 
 .user {
@@ -101,4 +103,11 @@ button {
 
 .received-tweets {
     color: green;
+}
+
+/* FOOTER */
+
+footer {
+    margin: 6% auto 0 auto;
+    width: 80%;
 }

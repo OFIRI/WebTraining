@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>TWEETING</title>
+
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.css">
     <link href="../css/tweeting.css" rel="stylesheet" />
     <link href="../css/testing.css" rel="stylesheet" />
-    <script type="text/javascript" src="../js/ofekQuery.js"></script>
-    <script type="text/javascript" src="../js/utils.js"></script>
-    <script type="text/javascript" src="../js/tweeting.js"></script>
-    <script type="text/javascript" src="../js/ofekTestFramwork.js"></script>
-    <script type="text/javascript" src="../js/tweetingTesting.js"></script>
 
 </head>
 <body>
@@ -20,7 +16,7 @@
         <div class="container">
             <div class="navbar-header">
                 <img class="header_icon" id="logo_pic" src="../images/ofek.png" alt="logo" />
-                <a class="header_icon" id="logo_text" href="tweeting.html">OfekTwitter</a>
+                <a class="header_icon" id="logo_text" href="index.html">OfekTwitter</a>
             </div>
             <nav id="site-options-nav" class="navbar-right">
                 <a class="header_icon" href="users.html">Users</a>
@@ -39,7 +35,17 @@
         </div>
     </section>
     <footer>
-
+        <button type="button" id="tests-btn" class="btn btn-primary">show page tests</button>
+        <div id="tests" display=false></div>
     </footer>
+
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script type="text/javascript" src="../js/ofekQuery.js"></script>
+<script type="text/javascript" src="../js/utils.js"></script>
+<script type="text/javascript" src="../js/ofekTestFramwork.js"></script>
+<script type="text/javascript" src="../js/tweetingTesting.js"></script>
+<script type="text/javascript" src="../js/service.js"></script>
+<script type="text/javascript" src="../js/tweeting.js"></script>
+
 </body>
 </html>

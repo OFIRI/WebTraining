@@ -1,23 +1,10 @@
-var allUsers = [
-    {username: 'Marty McFly', userId: '1234', isFollowing: false},
-    {username: 'Janis Joplin', userId: '1235', isFollowing: false},
-    {username: 'Albert Einstein', userId: '1236', isFollowing: false},
-    {username: 'Genghis Khan', userId: '1237', isFollowing: false},
-    {username: 'Dracula', userId: '1238', isFollowing: false},
-    {username: 'Forest Gump', userId: '1239', isFollowing: false},
-    {username: 'Caligula', userId: '1240', isFollowing: false},
-    {username: 'Winnie the Pooh', userId: '1241', isFollowing: false},
-    {username: 'Obama', userId: '1242', isFollowing: false},
-    {username: 'Henry the 8th', userId: '1243', isFollowing: false}
-];
+var users = [];
 
+getUsers()
+    .then(response => users = response.data)
+    .then(loadUsers);
 
-
-window.onload = function() {
-    loadUsers(allUsers);
-};
-
-var loadUsers = function (users) {
+function loadUsers() {
     var x = document.createDocumentFragment();
     for (var currUser of users) {
         var columnOfUser = createDivElement("col-md-2");

@@ -1,18 +1,20 @@
-var tweets = [
-    {username: 'Bobo', text: 'hello followers!'},
-    {username: 'Elvis', text: 'this exercise is really easy!'},
-    {username: 'Mimi', text: 'I want to go to sleep'}
-];
+var tweets = [];
+var users = [];
 
-window.onload = function() {
-    loadExistingTweets();
-    onPageLoad();
+    getTweets()
+    .then(response => tweets = response.data)
+    .then(getUsers)
+    .then(response => users = response.data)
+    .then(loadExistingTweets);
+    //.then(testTweetingPage);
 
-    var button = document.getElementById("publish-btn");
-    button.addEventListener("click", addNewTweet);
-};
 
-var loadExistingTweets = function () {
+var publishButton = document.getElementById("publish-btn");
+publishButton.addEventListener("click", addNewTweet);
+var testsButton = document.getElementById("tests-btn");
+testsButton.addEventListener("click", showTests);
+
+function loadExistingTweets() {
     var x = document.createDocumentFragment();
     for (var currTweet of tweets) {
         var user = createDivElement("user");
@@ -21,7 +23,7 @@ var loadExistingTweets = function () {
         var name = createParagraphElement("user-name");
 
         name.classList.add("received-tweets");
-        name.innerHTML = currTweet.username;
+        name.innerHTML = getUserById(currTweet.user).username;
         var input = createParagraphElement("user-input");
         input.innerHTML = currTweet.text;
 
@@ -34,13 +36,15 @@ var loadExistingTweets = function () {
     }
 
     document.getElementById("users").appendChild(x);
-};
+}
 
-var addNewTweet = function () {
+function addNewTweet() {
     var newTweetInput = document.getElementById("input").value;
-    var newTweet = {username: 'Ofir', textNode: document.createTextNode(newTweetInput)};
-    tweets.push(newTweet.username, newTweet.textNode.nodeValue);
+    var newTweet = {username: 'Ofir', textNode: document.createTextNode(newTweetInput).nodeValue};
     document.getElementById("input").value = "";
+
+    postTweet(newTweet.username, newTweet.textNode);
+    tweets.push(newTweet);
 
     var user = createDivElement("user");
     var img = createImgElement("user-pic", "../images/useravatar.png");
@@ -48,7 +52,7 @@ var addNewTweet = function () {
     var name = createParagraphElement("user-name");
     name.innerHTML = newTweet.username;
     var input = createParagraphElement("user-input");
-    input.innerText = newTweet.textNode.nodeValue;
+    input.innerText = newTweet.textNode;
 
     info.appendChild(name);
     info.appendChild(input);
@@ -57,3 +61,25 @@ var addNewTweet = function () {
 
     document.getElementById("users").appendChild(user);
 };
+
+function getUserById(id) {
+    var user;
+    for (currUser of users) {
+        if (currUser._id === id) {
+            user = currUser;
+            break;
+        }
+    }
+
+    return user;
+}
+
+function showTests() {
+    if (document.getElementById("tests").style.display == "none") {
+        document.getElementById("tests").style.display = "block";
+        document.getElementById("tests-btn").innerHTML = "hide page tests";
+    } else {
+        document.getElementById("tests").style.display = "none";
+       document.getElementById("tests-btn").innerHTML = "show page tests";
+    }
+}

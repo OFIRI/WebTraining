@@ -14,6 +14,7 @@ function test_group(name, test_group_function) {
     test_group_function();
     currentGroupHTML += "</ul></div>";
     currentGroupHTML = currentGroupHTML.replace("#groupClass", currentGroupResult ? "passed" : "failed");
-    document.body.innerHTML += currentGroupHTML;
+    document.querySelector("#tests").innerHTML += currentGroupHTML;
+    document.getElementById("tests").style.display = "none";
 }
 

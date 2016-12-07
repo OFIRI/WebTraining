@@ -1,4 +1,4 @@
-function onPageLoad() {
+function testTweetingPage() {
     test_group("Selectors", function() {
        assert(checkThereIsOneLogoImage(), "counting one image logo class element");
        assert(checkThereIsThreeTweets(), "counting 3 tweet-username classes under ot-body class");
