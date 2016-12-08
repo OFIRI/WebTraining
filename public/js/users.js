@@ -9,7 +9,7 @@ function loadUsers() {
     for (var currUser of users) {
         var columnOfUser = createDivElement("col-md-2");
         var user = createDivElement("user");
-        user.id = currUser.userId;
+        user.id = currUser._id;
         user.classList.add("thumbnail");
         var img = createImgElement("user-pic", "../images/useravatar.png");
         var button = createButtonElement("btn btn-primary");
@@ -34,9 +34,9 @@ function loadUsers() {
     document.getElementById("all_users").appendChild(x);
 };
 
-var filterUsers = function () {
+function filterUsers() {
     var inputToFilter = document.getElementById("filter-input").value;
-    allUsers.forEach(function(currUser) {
+    users.forEach(function(currUser) {
         if (!currUser.username.includes((inputToFilter))) {
             document.getElementById(currUser.userId).parentNode.style.display = "none";
         } else {
@@ -45,9 +45,9 @@ var filterUsers = function () {
     });
 };
 
-var changeUserStatus = function() {
-    allUsers.forEach(function(currUser){
-        if(currUser.userId == document.activeElement.parentNode.id){
+function changeUserStatus() {
+    users.forEach(function(currUser){
+        if(currUser._id == document.activeElement.parentNode.id){
             currUser.isFollowing = !currUser.isFollowing;
         }
     });
