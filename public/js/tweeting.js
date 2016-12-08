@@ -15,32 +15,36 @@ var testsButton = document.getElementById("tests-btn");
 testsButton.addEventListener("click", showTests);
 
 function loadExistingTweets() {
-    var x = document.createDocumentFragment();
+    var documentFragment = document.createDocumentFragment();
     for (var currTweet of tweets) {
-        var user = createDivElement("user");
-        var img = createImgElement("user-pic", "../images/useravatar.png");
-        var info = createDivElement("user-info");
-        var name = createParagraphElement("user-name");
-
-        name.classList.add("received-tweets");
-        name.innerHTML = getUserById(currTweet.user).username;
-        var input = createParagraphElement("user-input");
-        input.innerHTML = currTweet.text;
-
-        info.appendChild(name);
-        info.appendChild(input);
-        user.appendChild(img, info);
-        user.appendChild(info);
-
-        x.appendChild(user);
+        documentFragment.appendChild(createTweetStructure(currTweet));
     }
 
-    document.getElementById("users").appendChild(x);
+    document.getElementById("users").appendChild(documentFragment);
+}
+
+function createTweetStructure(tweetData) {
+    var user = createDivElement("user");
+    var img = createImgElement("user-pic", "../images/useravatar.png");
+    var info = createDivElement("user-info");
+    var name = createParagraphElement("user-name");
+
+    name.classList.add("received-tweets");
+    name.innerHTML = getUserById(tweetData.user).username;
+    var input = createParagraphElement("user-input");
+    input.innerHTML = tweetData.text;
+
+    info.appendChild(name);
+    info.appendChild(input);
+    user.appendChild(img, info);
+    user.appendChild(info);
+
+    return user;
 }
 
 function addNewTweet() {
     var newTweetInput = document.getElementById("input").value;
-    var newTweet = {username: 'Ofir', textNode: document.createTextNode(newTweetInput).nodeValue};
+    var newTweet = {username: '953ee40c-77d3-46cc-8258-fc815c9b1f91', textNode: document.createTextNode(newTweetInput).nodeValue};
     document.getElementById("input").value = "";
 
     postTweet(newTweet.username, newTweet.textNode);
@@ -50,7 +54,7 @@ function addNewTweet() {
     var img = createImgElement("user-pic", "../images/useravatar.png");
     var info = createDivElement("user-info");
     var name = createParagraphElement("user-name");
-    name.innerHTML = newTweet.username;
+    name.innerHTML = getUserById(newTweet.username).username;
     var input = createParagraphElement("user-input");
     input.innerText = newTweet.textNode;
 

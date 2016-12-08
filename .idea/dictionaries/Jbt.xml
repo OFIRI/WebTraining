@@ -2,6 +2,8 @@
   <dictionary name="Jbt">
     <words>
       <w>axios</w>
+      <w>followee</w>
+      <w>followees</w>
       <w>navbar</w>
       <w>ofek</w>
       <w>onload</w>

@@ -2,19 +2,18 @@ const tweetsAccessor = require('../dataAccessor/tweetsAccessor');
 
 let initialize = (app) => {
     app.get('/tweets', function (req, res, next) {
-        tweetsAccessor.readTweets()
-            .then(response => res.send(response))
+        tweetsAccessor.getAllTweets()
+            .then(response => res.send(response));
     });
 
-    function getTweetByUserId() {
+    app.get('/tweets/:userId', function(req, res, next) {
+            tweetsAccessor.getTweetsOfUser(req.params.userId)
+                .then(response => res.send(response));
+    });
 
-    }
-
-    function addNewTweet() {
-        app.put('/tweet', function(req, res, next) {
-            tweets.push(req.body);
-        });
-    }
+    app.put('/tweets', function(req, res, next) {
+            tweetsAccessor.addTweet(req.body);
+    });
 };
 
 module.exports = initialize;

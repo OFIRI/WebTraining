@@ -1,60 +1,83 @@
-var users = [];
+let users = [];
+let myUserId = '953ee40c-77d3-46cc-8258-fc815c9b1f91';
 
 getUsers()
     .then(response => users = response.data)
-    .then(loadUsers);
+    .then(loadUsers)
+    .then(loadFollowees);
 
 function loadUsers() {
-    var x = document.createDocumentFragment();
+    var documentFragment = document.createDocumentFragment();
     for (var currUser of users) {
-        var columnOfUser = createDivElement("col-md-2");
-        var user = createDivElement("user");
-        user.id = currUser._id;
-        user.classList.add("thumbnail");
-        var img = createImgElement("user-pic", "../images/useravatar.png");
-        var button = createButtonElement("btn btn-primary");
-        button.onclick = changeUserStatus;
-
-        if (currUser.isFollowing) {
-            button.innerText = 'unfollow';
-        } else {
-            button.innerText = 'follow';
-        }
-
-        var name = createParagraphElement("");
-        name.innerHTML = currUser.username;
-
-        user.appendChild(img);
-        user.appendChild(button);
-        user.appendChild(name);
-        columnOfUser.appendChild(user);
-
-        x.appendChild(columnOfUser);
+        documentFragment.appendChild(createUserStructure(currUser));
     }
-    document.getElementById("all_users").appendChild(x);
-};
+    document.getElementById("all_users").appendChild(documentFragment);
+}
+
+function createUserStructure(userData) {
+    var columnOfUser = createDivElement("col-md-2");
+    var user = createDivElement("user");
+    user.id = userData._id;
+    user.classList.add("thumbnail");
+    var img = createImgElement("user-pic", "../images/useravatar.png");
+    var button = createButtonElement("btn btn-primary");
+    button.innerText = addButtonData(userData);
+    button.onclick = changeUserStatus;
+    var name = createParagraphElement("");
+    name.innerHTML = userData.username;
+
+    user.appendChild(img);
+    user.appendChild(button);
+    user.appendChild(name);
+    columnOfUser.appendChild(user);
+
+    return columnOfUser;
+}
+
+function loadFollowees() {
+    getUserById(myUserId)
+        .then(function(response) {
+            var documentFragment = document.createDocumentFragment();
+            for (var currFollowee of response.following) {
+                documentFragment.appendChild(createFolloweeStructure(currFollowee));
+            }
+            document.getElementById("followees").appendChild(documentFragment);
+        });
+}
+
+function createFolloweeStructure(followee) {
+    var columnOfUser = createDivElement("col-md-12");
+    columnOfUser.appendChild(followee); //?
+}
+
+function addButtonData(user) {
+    if (user.isFollowing) {
+        return 'unfollow';
+    } else {
+        return 'follow';
+    }
+}
 
 function filterUsers() {
     var inputToFilter = document.getElementById("filter-input").value;
     users.forEach(function(currUser) {
         if (!currUser.username.includes((inputToFilter))) {
-            document.getElementById(currUser.userId).parentNode.style.display = "none";
+            document.getElementById(currUser._id).parentNode.style.display = "none";
         } else {
-            document.getElementById(currUser.userId).parentNode.style.display = "block";
+            document.getElementById(currUser._id).parentNode.style.display = "block";
         }
     });
-};
+}
 
 function changeUserStatus() {
-    users.forEach(function(currUser){
-        if(currUser._id == document.activeElement.parentNode.id){
-            currUser.isFollowing = !currUser.isFollowing;
-        }
-    });
+    let userToFollow =  document.activeElement.parentNode;
 
     if (document.activeElement.textContent === 'follow') {
+        addFolloweeToUser(myUserId, userToFollow.id);
+        getUserById(myUserId).following.push(userToFollow.id);
+
         document.activeElement.textContent = "unfollow";
-        var dupUser = document.activeElement.parentNode.cloneNode(true);
+        var dupUser = userToFollow.cloneNode(true);
         dupUser.id = dupUser.id + ".copy";
         dupUser.querySelector("button").addEventListener('click', function(){
                 changeUserStatus();
@@ -64,7 +87,7 @@ function changeUserStatus() {
         columnOfUser.appendChild(dupUser);
         document.getElementById("followees").appendChild(columnOfUser);
     } else {
-        var pressedUserId = document.activeElement.parentNode.id;
+        var pressedUserId = userToFollow.id;
         if (!pressedUserId.includes(".copy")) {
             pressedUserId += ".copy";
         }
@@ -74,3 +97,15 @@ function changeUserStatus() {
         document.getElementById(pressedUserId).remove();
     }
 };
+
+function getUserById(id) {
+    var wantedUser;
+    for (var currUser of users) {
+        if (currUser._id === id) {
+            wantedUser = currUser;
+            break;
+        }
+    }
+
+    return wantedUser;
+}

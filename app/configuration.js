@@ -12,6 +12,6 @@ let initialize = (app, express) => {
 
     app.use('/', express.static(path.resolve('../public')));
     app.use('/', express.static(path.resolve('../public/html/')));
-}
+};
 
 module.exports = initialize;

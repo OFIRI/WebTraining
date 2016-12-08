@@ -48,4 +48,9 @@
     "username": "Lottie",
     "password": "amet",
     "following": ["ff2b41b9-e1d8-4594-9aa3-c1dda30b0d22", "ac59f830-e8f7-4764-8efd-764d99c7c4f4", "cc707c95-f1e3-4caf-906d-f9dd1f394b99"]
+}, {
+    "_id": "953ee40c-77d3-46cc-8258-fc815c9b1f91",
+    "username": "Ofir",
+    "password": "1234",
+    "following": ["ff2b41b9-e1d8-4594-9aa3-c1dda30b0d22", "ac59f830-e8f7-4764-8efd-764d99c7c4f4", "cc707c95-f1e3-4caf-906d-f9dd1f394b99"]
 }]
