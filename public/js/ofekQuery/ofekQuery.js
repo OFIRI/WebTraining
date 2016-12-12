@@ -39,7 +39,6 @@ var handleQueryList = function (query, rootElement, previousElements) {
     var elements = [];
     var newElementArray = [];
 
-    console.log(query.startsWith);
     if (query.indexOf("#") === 0) {
         var newElementById = document.getElementById(query.slice(1));
         if (newElementById !== null) {
