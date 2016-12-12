@@ -55,7 +55,7 @@ describe("tweetingAccessor", function () {
         it("should return a nonempty array if id is valid", function (done) {
             tweetingAccessor.getTweetsOfUser("ff2b41b9-e1d8-4594-9aa3-c1dda30b0d22")
                 .then(arrayOfTweets => {
-                    expect(arrayOfTweets.length).not.toBe(0);
+                    expect(arrayOfTweets.length).not.toEqual(0);
                     done();
                 })
         });
