@@ -2,25 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>TWEETING</title>
+
 </head>
 <body>
-<div id="davids-div">
-    <ol id="david-likes">
-        <li>Killing students</li>
-        <li>That make him write tests</li>
-        <li>at 12am</li>
-        <li>Dogs</li>
-        <li>Sleeping</li>
-        <li>Ice cream</li>
-    </ol>
+<header>
+    <div id="general-nav" class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <img class="header_icon" id="logo_pic" src="../images/ofek.png" alt="logo" />
+                <a class="header_icon" id="logo_text" href="index.html">OfekTwitter</a>
+            </div>
+            <nav id="site-options-nav" class="navbar-right">
+                <a class="header_icon" href="users.html">Users</a>
+                <a class="header_icon" href="#">Sign in</a>
+                <a class="header_icon" href="#">Sign up</a>
+            </nav>
+        </div>
+    </div>
+</header>
+<section class="container">
+    <div>
+        <textarea id="input" class="form-control" rows="3" placeholder="tweet text..."></textarea>
+        <button type="button" id="publish-btn" class="btn btn-primary">publish</button>
+    </div>
+    <div id="users">
+    </div>
+</section>
+<footer>
+    <button type="button" id="tests-btn" class="btn btn-primary">show page tests</button>
+    <div id="tests" display=false></div>
+</footer>
 
-    <ul id="david-dislikes">
-        <li>Not sleeping</li>
-        <li>Writing tests</li>
-        <li>Writing stupid lists</li>
-        <li>Lets put a p tag here <p>Just for fun</p></li>
-    </ul>
-</div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 var tweetingAccessor = require('../../dataAccessor/tweetsAccessor');
 
-describe("UserAccessor", function () {
+describe("tweetingAccessor", function () {
     describe("Should get all the tweets", function() {
         it("should return a not null value", function (done){
             tweetingAccessor.getAllTweets()
@@ -13,7 +13,7 @@ describe("UserAccessor", function () {
         it("should return all tweets as a json object", function (done){
             tweetingAccessor.getAllTweets()
                 .then(tweets => {
-                    expect(typeof tweets).toBe('object');
+                    expect(typeof tweets).toEqual('object');
                     done();
                 })
         });
