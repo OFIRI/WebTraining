@@ -1,9 +1,10 @@
 const fs = require('fs');
+const path = require('path');
 let users = [];
 
 function getAllUsers() {
     return new Promise(function(resolve, reject) {
-        fs.readFile('DataAccessor/users.json', 'utf8', function (err, data) {
+        fs.readFile(__dirname + '/users.json', 'utf8', function (err, data) {
             if (err) throw err;
             users = JSON.parse(data);
 
@@ -16,8 +17,7 @@ function getUserById(userId) {
     return new Promise(function(resolve, reject) {
         var wantedUser;
         for (var currUser of users) {
-            index++;
-            if (currUser._id === id) {
+            if (currUser._id === userId) {
                 wantedUser = currUser;
                 break;
             }
