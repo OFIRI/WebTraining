@@ -52,10 +52,16 @@ function addFolloweeToUser(userId, followeeId) {
 }
 
 function getUserIndex(userId) {
+    var isUserExist = false;
     for (var index = 0; index < users.length; index++) {
         if (users[index]._id === userId) {
+            isUserExist = true;
             break;
         }
+    }
+
+    if(!isUserExist) {
+        index = undefined;
     }
 
     return index;
@@ -64,4 +70,5 @@ function getUserIndex(userId) {
 module.exports = {getAllUsers: getAllUsers,
                   getUserById: getUserById,
                   getUserFollowers: getUserFollowers,
-                  addFolloweeToUser: addFolloweeToUser};
+                  addFolloweeToUser: addFolloweeToUser,
+                  getUserIndex: getUserIndex};

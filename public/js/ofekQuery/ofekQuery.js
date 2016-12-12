@@ -39,12 +39,13 @@ var handleQueryList = function (query, rootElement, previousElements) {
     var elements = [];
     var newElementArray = [];
 
-    if (query.startsWith("#")) {
+    console.log(query.startsWith);
+    if (query.indexOf("#") === 0) {
         var newElementById = document.getElementById(query.slice(1));
         if (newElementById !== null) {
             newElementArray.push(newElementById);
         }
-    } else if (query.startsWith(".")) {
+    } else if (query.indexOf(".") === 0) {
         newElementArray = makeArrayFromNodeList(rootElement.getElementsByClassName(query.slice(1)));
     } else {
         newElementArray = makeArrayFromNodeList(rootElement.getElementsByTagName(query));
