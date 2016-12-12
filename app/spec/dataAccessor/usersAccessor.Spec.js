@@ -5,7 +5,7 @@ describe("UserAccessor", function () {
         it("should return a not null value", function (done){
             userAccessor.getAllUsers()
                 .then(users => {
-                    expect(users).not.toBe(null);
+                    expect(users).not.toBeNull();
                     done();
                 })
         });
@@ -77,7 +77,7 @@ describe("UserAccessor", function () {
         it("should return a nonempty array if id is valid", function (done) {
             userAccessor.getUserFollowers("ff2b41b9-e1d8-4594-9aa3-c1dda30b0d22")
                 .then(arrayOfFollowers => {
-                    expect(arrayOfFollowers.length).not.toBe(0);
+                    expect(arrayOfFollowers.length).not.toEqual(0);
                     done();
                 })
         });

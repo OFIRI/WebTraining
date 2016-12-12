@@ -5,9 +5,9 @@ describe("tweetingAccessor", function () {
         it("should return a not null value", function (done){
             tweetingAccessor.getAllTweets()
                 .then(tweets => {
-                    expect(tweets).not.toBe(null);
+                    expect(tweets).not.toBeNull();
                     done();
-                })
+                });
         });
 
         it("should return all tweets as a json object", function (done){
@@ -15,7 +15,7 @@ describe("tweetingAccessor", function () {
                 .then(tweets => {
                     expect(typeof tweets).toEqual('object');
                     done();
-                })
+                });
         });
 
         it("should return each tweet as an object", function (done) {
